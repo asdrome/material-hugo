@@ -1,2 +1,7 @@
-# material-hugo
-Material Design 3 Theme for Hugo
+# Theme Name
+
+## Features
+
+## Installation
+
+## Configuration
