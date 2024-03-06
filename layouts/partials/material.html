@@ -1,0 +1,54 @@
+<h1>Material Design 3 within Hugo</h1>
+
+<p>
+  Generate a theme with: <a href="https://material-foundation.github.io/material-theme-builder/">the Material Theme Builder</a> and replace the tokens for light and dark in the assets/tokens.css file
+</p>
+
+<h2>Buttons</h2>
+<p><a href="https://material-web.dev/components/button/">Reference</a></p>
+<div>
+  <md-elevated-button>Elevated</md-elevated-button>
+  <md-filled-button>Filled</md-filled-button>
+  <md-filled-tonal-button>Tonal</md-filled-tonal-button>
+  <md-outlined-button>Outlined</md-outlined-button>
+  <md-text-button>Text</md-text-button>
+  <md-filled-tonal-button>
+    Send
+    <svg slot="icon" viewBox="0 0 48 48">
+      <path
+        d="M6 40V8l38 16Zm3-4.65L36.2 24 9 12.5v8.4L21.1 24 9 27Zm0 0V12.5 27Z"
+      />
+    </svg>
+  </md-filled-tonal-button>
+  <md-text-button trailing-icon>
+    Open
+    <svg slot="icon" viewBox="0 0 48 48">
+      <path
+        d="M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h13.95v3H9v30h30V25.05h3V39q0 1.2-.9 2.1-.9.9-2.1.9Zm10.1-10.95L17 28.9 36.9 9H25.95V6H42v16.05h-3v-10.9Z"
+      />
+    </svg>
+  </md-text-button>
+</div>
+<h2>Checkbox</h2>
+<p><a href="https://material-web.dev/components/checkbox/">Reference</a></p>
+<div>
+  <md-checkbox touch-target="wrapper"></md-checkbox>
+  <md-checkbox touch-target="wrapper" checked></md-checkbox>
+  <md-checkbox touch-target="wrapper" indeterminate></md-checkbox>
+</div>
+
+<div>
+  <label>
+    <md-checkbox touch-target="wrapper"></md-checkbox>
+    Checkbox one
+  </label>
+
+  <md-checkbox id="checkbox-two" touch-target="wrapper"></md-checkbox>
+  <label for="checkbox-two">Checkbox two</label>
+  <md-checkbox aria-label="Select all checkboxes"></md-checkbox>
+
+  <label>
+    <md-checkbox aria-label="Agree to terms and conditions"></md-checkbox>
+    Agree
+  </label>
+</div>

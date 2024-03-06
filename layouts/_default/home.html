@@ -1,5 +1,6 @@
 {{ define "main" }}
   {{ .Content }}
+  {{ partial "material.html" . }}
   {{ range site.RegularPages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Summary }}
