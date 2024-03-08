@@ -1,0 +1,11 @@
+{{ $href := .Get "href" }}
+{{ $icon := .Get "icon" }}
+{{ $trailingIcon := eq ( .Get "trailing-icon") "true"}}
+
+{{ with .Get "class" }}
+    {{ $class := . | safeHTMLAttr }}
+    <md-{{ $class }}-button{{- if $href }} href="{{ $href }}" {{- end }}{{ if $trailingIcon }}trailing-icon{{ end }}>
+        {{ $.Inner }}
+        {{ if $icon }}<md-icon slot="icon">{{ $icon }}</md-icon>{{ end }}
+    </md-{{ $class }}-button>
+{{ end }}
