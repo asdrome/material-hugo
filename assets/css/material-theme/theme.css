@@ -1,5 +1,9 @@
 @import "tokens";
 @import "colors.module";
 @import "typography.module";
-@import "theme.light" (prefers-color-scheme: light);
-@import "theme.dark" (prefers-color-scheme: dark);
+@media (prefers-color-scheme: light) {
+  @import "theme.light";
+}
+@media (prefers-color-scheme: dark) {
+  @import "theme.dark";
+}
