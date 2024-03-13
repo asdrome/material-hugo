@@ -1,23 +1,23 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
+baseURL = 'https://asdrome.com/'
+defaultContentLanguage = 'en'
 title = 'Material Hugo'
 
-[[menus.main]]
-name = 'Home'
-pageRef = '/'
-weight = 10
-
-[[menus.main]]
-name = 'Posts'
-pageRef = '/posts'
-weight = 20
-
-[[menus.main]]
-name = 'Tags'
-pageRef = '/tags'
-weight = 30
+sectionPagesMenu = 'main'
 
 [module]
   [module.hugoVersion]
-    extended = false
-    min = "0.116.0"
+    extended = true
+    min = "0.122.0"
+
+[languages]
+  [languages.en]
+    languageName= 'English'
+    contentDir= 'content/en'
+    weight= 1
+    disabled= false
+
+  [languages.es]
+    languageName= 'Español'
+    contentDir= 'content/es'
+    weight= 2
+    disabled= false

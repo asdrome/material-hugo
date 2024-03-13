@@ -1,0 +1,27 @@
+<md-elevated-card class="mx-2">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- Logo or page title -->
+      {{ partial "header/logo.html" . }}
+      <!-- Small menu devices toggle -->
+      <md-filled-tonal-icon-button
+        class="d-lg-none"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenuItems"
+        aria-controls="navbarMenuItems"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        toggle
+      >
+        <md-icon>menu_open</md-icon>
+        <md-icon slot="selected">close</md-icon>
+      </md-filled-tonal-icon-button>
+      <!-- Navbar menu -->
+      <div class="collapse navbar-collapse" id="navbarMenuItems">
+        {{ partial "header/menuitems.html" .}}
+      </div>
+    </div>
+  </nav>
+</md-elevated-card>
+

@@ -1,3 +1,4 @@
-title = 'Material Hugo'
 description = 'A Material Design 3 based Hugo Theme Showcase'
-favicon_image = '/m3-favicon.svg'
+icon = '/m3-favicon.svg'
+logo = '/m3-favicon.svg'
+active_cta_btn = true

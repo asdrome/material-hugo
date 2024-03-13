@@ -1,1 +1,11 @@
+$enable-grid-classes: false;
+$enable-cssgrid: true;
+@import "node_modules/bootstrap/scss/bootstrap.scss";
 @import 'material-theme/theme';
+@import 'header-footer';
+
+body {
+    background-color: var(--md-sys-color-background);
+    --md-elevated-card-container-color: var(--md-sys-color-surface-low);
+}
+

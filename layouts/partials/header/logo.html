@@ -1,0 +1,15 @@
+<a class="navbar-brand fs-1 font-monospace fw-semibold on-primary-text" href="{{ relLangURL `/` }}">
+  <img
+    src="{{ .Site.Data.settings.logo }}"
+    alt="{{ .Site.Title }} logo"
+    width="56"
+    height="56"
+    class="d-inline-block align-text-center"
+  />
+  <span class="display-small">{{ .Site.Title }}</span>
+</a>
+{{/*  {{ if not .Site.Data.settings.only_image_logo }} {{ if (index
+.Site.Data .Language.Lang).header.logo_subtitle }}<span
+  >{{ (index .Site.Data .Language.Lang).header.logo_subtitle }}</span
+>{{ end }} {{ end }}
+  */}}

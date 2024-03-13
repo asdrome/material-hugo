@@ -1,0 +1,68 @@
+{{- /*
+Renders a menu for the navbar menu ID.
+
+@context {page} page The current page.
+@context {string} menuID The menu ID defined in the header.toml.
+
+@example: {{ partial "nav-menu.html" (dict "menuID" "main" "page" .) }}
+*/}}
+
+
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- with index site.Menus $menuID }}
+  <nav>
+    <ul class="navbar-nav mb-2 mb-lg-0">
+      {{- partial "inline/navmenu/walk.html" (dict "page" $page "menuEntries" .) }}
+    </ul>
+  </nav>
+{{- end }}
+
+{{- define "partials/inline/navmenu/walk.html" }}
+  {{- $page := .page }}
+  {{- range .menuEntries }}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $page.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+    {{- else if $page.HasMenuCurrent .Menu .}}
+      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+    {{- end }}
+    {{- $name := .Name }}
+    {{- with .Identifier }}
+      {{- with T . }}
+        {{- $name = . }}
+      {{- end }}
+    {{- end }}
+    <li class="
+    {{ if .Children }}
+    nav-item dropdown
+    {{ else if .Parent }}
+    {{ else }}
+    nav-item
+    {{ end }}
+      ">
+      <a
+        {{ if .Children }}
+        class="nav-link dropdown-toggle on-primary-text"
+        role="button"
+        data-bs-toggle="dropdown"
+        {{ else if .Parent }}
+        class="dropdown-item"
+        {{ else }}
+        class="nav-link on-primary-text"
+        {{ end }}
+        {{- range $k, $v := $attrs }}
+          {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{- end }}
+        {{- end -}}
+      >{{ $name }}</a>
+      {{- with .Children }}
+        <ul class="dropdown-menu">
+          {{- partial "inline/navmenu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      {{- end }}
+    </li>
+  {{- end }}
+{{- end }}
