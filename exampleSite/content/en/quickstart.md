@@ -2,7 +2,10 @@
 title = 'Quickstart'
 date = 2024-03-12T19:01:00-06:00
 draft = false
-active = true
+[menus]
+  [menus.main]
+    parent = 'Products'
+    weight = 2
 +++
 # Welcome to Your New Site
 

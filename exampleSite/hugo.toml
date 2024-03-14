@@ -2,8 +2,6 @@ baseURL = 'https://asdrome.com/'
 defaultContentLanguage = 'en'
 title = 'Material Hugo'
 
-sectionPagesMenu = 'main'
-
 [module]
   [module.hugoVersion]
     extended = true
