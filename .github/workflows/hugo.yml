@@ -53,6 +53,7 @@ jobs:
         with:
           node-version: "20.x"
           cache: 'yarn'
+          cache-dependency-path: 'exampleSite/yarn.lock'
       - name: Install dependencies
         run: yarn install --immutable
         working-directory: exampleSite
