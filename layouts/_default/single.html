@@ -10,7 +10,7 @@
     <div class="px-3">
       {{ .Content }}
     </div>
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
   </md-elevated-card>
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 </div>
 {{ end }}
