@@ -1,12 +1,19 @@
 {{ define "main" }}
-<h1 class="display-large on-surface-text">{{ .Title }}</h1>
-  <div class="body-large on-surface-text">
-    {{ .Content }}
-  </div>
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    <div class="body-large on-surface-text">
-      {{ .Summary }}
+<h1 class="headline-medium fs-1 px-4 on-surface-text">{{ .Title }}</h1>
+  <md-elevated-card class="px-1 py-3 mx-4 my-1">
+    <div class="body-medium fs-6 on-surface-text px-3">
+      {{ .Content }}
     </div>
-  {{ end }}
+    <div class="body-medium fs-6 on-surface-text px-3">
+    {{ range .Pages }}
+      <md-elevated-card class="p-3 my-2">
+        <h2><a class="headline-small" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        <div class="body-medium fs-6 on-surface-text">
+          {{ .Summary }}
+        </div>
+      </md-elevated-card>
+    {{ end }}
+    </div>
+  </md-elevated-card>
+
 {{ end }}

@@ -1,11 +1,11 @@
 <div class="me-auto"></div> {{/*  Spacer  */}}
-<div class="navbar-nav mb-2 mb-lg-0">
+<div class="navbar-nav fs-5 title-large">
   {{ partial "header/nav-menu.html" (dict "menuID" "main" "page" .) }}
 </div>
 
 {{ with .Site.GetPage "page" "quickstart.md" }}
     {{ if .Site.Data.settings.active_cta_btn }}
-        <md-filled-tonal-button href="{{ .Permalink }}" class="mx-3">
+        <md-filled-tonal-button class="fs-6 mb-2 mx-lg-2 mb-lg-0" href="{{ .Permalink }}">
           {{ .Title }}
         </md-filled-tonal-button>
     {{ end }}

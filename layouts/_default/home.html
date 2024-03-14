@@ -1,5 +1,8 @@
 {{ define "main" }}
-  <div class="body-large on-surface-text">
+<h1 class="headline-large fs-1 px-4 on-surface-text">{{ .Title }}</h1>
+<md-elevated-card class="px-2 pt-4 mx-4 my-1">
+  <div class="body-large fs-6 on-surface-text px-4">
     {{ .Content }}
   </div>
+</md-elevated-card>
 {{ end }}

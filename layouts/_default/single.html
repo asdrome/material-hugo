@@ -1,13 +1,16 @@
 {{ define "main" }}
-  <h1 class="display-large on-surface-text">{{ .Title }}</h1>
-
-  <div class="body-large on-surface-text">
-
+<div class="body-medium fs-6 on-surface-text">
+  <div class="grid align-items-center">
+    <h1 class="g-col-8 headline-medium fs-1 px-4">{{ .Title }}</h1>
     {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
     {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-
-    {{ .Content }}
+    <time class="g-col-4 fs-5" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
   </div>
+  <md-elevated-card class="px-1 py-3 mx-4 my-1">
+    <div class="px-3">
+      {{ .Content }}
+    </div>
+  </md-elevated-card>
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+</div>
 {{ end }}
