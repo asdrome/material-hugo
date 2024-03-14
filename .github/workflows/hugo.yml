@@ -46,10 +46,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-      - name: Change to exampleSite
-        run: "cd exampleSite"
       - name: Install yarn dependencies
         run: "yarn"
+        working-directory: exampleSite
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -60,6 +59,7 @@ jobs:
             --minify \
             --theme "../.." \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+        working-directory: dart_project
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
