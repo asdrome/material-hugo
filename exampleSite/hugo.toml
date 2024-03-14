@@ -9,13 +9,13 @@ title = 'Material Hugo'
 
 [languages]
   [languages.en]
-    languageName= 'English'
-    contentDir= 'content/en'
-    weight= 1
-    disabled= false
+    languageName = 'English'
+    contentDir = 'content/en'
+    weight = 1
+    disabled = false
 
   [languages.es]
-    languageName= 'Español'
-    contentDir= 'content/es'
-    weight= 2
-    disabled= false
+    languageName = 'Español'
+    contentDir = 'content/es'
+    weight = 2
+    disabled = true

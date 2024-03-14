@@ -1,0 +1,13 @@
+md-elevated-card {
+    --md-elevated-card-container-color: var(--md-sys-color-surface-container-low);
+}
+
+md-elevated-card md-elevated-card{
+    --md-elevated-card-container-color: var(--md-sys-color-surface-container);
+    --md-elevated-card-container-elevation: 3;
+}
+
+md-elevated-card md-elevated-card md-elevated-card {
+    --md-elevated-card-container-color: var(--md-sys-color-surface-container-high);
+    --md-elevated-card-container-elevation: 5;
+}
