@@ -25,7 +25,6 @@ concurrency:
 defaults:
   run:
     shell: bash
-    working-directory: exampleSite
 
 jobs:
   # Build job
@@ -54,8 +53,10 @@ jobs:
         with:
           node-version: "20.x"
           cache: 'yarn'
+          cache-dependency-path: 'exampleSite/yarn.lock'
       - name: Install dependencies
         run: yarn install --immutable
+        working-directory: exampleSite
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -66,10 +67,12 @@ jobs:
             --minify \
             --theme "../.." \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+        working-directory: exampleSite
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./exampleSite/public
+        
 
   # Deployment job
   deploy:
