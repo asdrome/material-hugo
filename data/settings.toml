@@ -1,4 +1,4 @@
 description = 'A Material Design 3 based Hugo Theme Showcase'
-icon = '/m3-favicon.svg'
-logo = '/m3-favicon.svg'
+icon = '/material-hugo/m3-favicon.svg'
+logo = '/material-hugo/m3-favicon.svg'
 active_cta_btn = true

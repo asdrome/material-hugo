@@ -1,6 +1,6 @@
-<a class="navbar-brand on-primary-text" href="{{ relLangURL `/` }}">
+<a class="navbar-brand on-primary-text" href="{{ .Site.BaseURL }}">
   <img
-    src="{{ .Site.Data.settings.logo }}"
+    src="{{ .Site.Data.settings.logo | absURL}}"
     alt="{{ .Site.Title }} logo"
     width="48"
     height="48"
