@@ -4,6 +4,7 @@ $enable-cssgrid: true;
 @import 'material-theme/theme';
 @import 'card';
 @import 'header-footer';
+@import 'custom';
 
 body {
     background-color: var(--md-sys-color-surface-container);
@@ -13,21 +14,21 @@ body {
 
 @font-face {
     font-family: 'Roboto';
-    src: url('/material-hugo/fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('{{ relURL "fonts" }}/Roboto-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('/material-hugo/fonts/Roboto-Medium.ttf') format('truetype');
+    src: url('{{ relURL "fonts" }}/Roboto-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('/material-hugo/fonts/Roboto-Bold.ttf') format('truetype');
+    src: url('{{ relURL "fonts" }}/Roboto-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }

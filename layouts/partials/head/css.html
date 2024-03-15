@@ -1,5 +1,5 @@
 <link defer rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" media="print" onload="this.media='all'">
-{{- with resources.Get "css/main.scss" | resources.ToCSS}}
+{{- with resources.Get "css/main.scss" |  resources.ExecuteAsTemplate "main.scss" .  | resources.ToCSS}}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
